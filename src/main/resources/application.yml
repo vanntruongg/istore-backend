@@ -1,0 +1,24 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/istore_db
+    username: root
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secret: "97c0c3367b199d00cc6234faf02e7747b22dc21115af1f355822d50abf48a1b01807985bcf5b192d5758ba8895e24ff9f69df2bc18a0e497e988838135658630"
+  type: JWT
+  header: "Authorization"
+  prefix: "Bearer "
+  expire-time-access-token: 1800000       # 30minutes
+  expire-time-refresh-token: 86400000     # 1day
